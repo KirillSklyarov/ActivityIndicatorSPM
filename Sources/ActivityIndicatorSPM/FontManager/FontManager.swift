@@ -41,7 +41,7 @@ public enum FontManager {
             if registeredFonts.contains(font.fontName) {
                 print("✅ Font already registered: \(font.fontName)")
             } else {
-                registerFont(name: font.fontName)
+                registerFont(name: font.filename)
             }
         }
 
