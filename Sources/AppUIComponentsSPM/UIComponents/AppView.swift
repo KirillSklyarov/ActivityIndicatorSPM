@@ -7,7 +7,7 @@ enum AppViewType {
     case roundedTopView
 }
 
-final class AppView: UIView {
+public final class AppView: UIView {
 
     init(type: AppViewType) {
         super.init(frame: .zero)
