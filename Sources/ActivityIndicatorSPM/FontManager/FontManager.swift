@@ -41,7 +41,7 @@ public enum FontManager {
             if registeredFonts.contains(font.fontName) {
                 print("✅ Font already registered: \(font.fontName)")
             } else {
-                registerFont(name: font.filename)
+                registerFont(font: font)
             }
         }
 
@@ -53,10 +53,10 @@ public enum FontManager {
         UIFont(name: postScriptName, size: 12) != nil
     }
 
-    private static func registerFont(name: String) {
+    private static func registerFont(font: FontName) {
         let bundle = Bundle.module
 
-        guard let fontURL = bundle.url(forResource: name, withExtension: "otf") else {
+        guard let fontURL = bundle.url(forResource: font.filename, withExtension: "otf") else {
             print("Failed to find font in bundle")
             return
         }
@@ -74,7 +74,7 @@ public enum FontManager {
 
         var error: Unmanaged<CFError>?
         if CTFontManagerRegisterGraphicsFont(font, &error) {
-            print("✅ Successfully registered font: \(name)")
+            print("✅ Successfully registered font: \(font)")
         } else {
             if let error = error?.takeRetainedValue() {
                 let description = CFErrorCopyDescription(error)
@@ -84,12 +84,12 @@ public enum FontManager {
     }
 
     public static func printAvailableFonts() {
-            FontName.allCases.forEach { font in
-                if isFontRegistered(font.fontName) {
-                    print("✅ Available: \(font.fontName)")
-                } else {
-                    print("❌ Not available: \(font.fontName)")
-                }
+        FontName.allCases.forEach { font in
+            if isFontRegistered(font.fontName) {
+                print("✅ Available: \(font.fontName)")
+            } else {
+                print("❌ Not available: \(font.fontName)")
             }
         }
+    }
 }
