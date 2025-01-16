@@ -1,6 +1,6 @@
 import UIKit
 
-final class CustomSegmentControl: UISegmentedControl {
+public final class CustomSegmentControl: UISegmentedControl {
 
     // MARK: - Properties&Callbacks
     private lazy var selectedSegmentOval = UIView()
@@ -9,7 +9,7 @@ final class CustomSegmentControl: UISegmentedControl {
     var onSegmentControllerValueChanged: ((Int) -> Void)?
 
     // MARK: - Init
-    init(items: [Any]?, defaultSelection: Int) {
+    public init(items: [Any]?, defaultSelection: Int) {
         super.init(items: items)
         configSegmentControl(defaultSelection)
     }
@@ -18,7 +18,7 @@ final class CustomSegmentControl: UISegmentedControl {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         moveOval(selectedSegmentIndex)
     }

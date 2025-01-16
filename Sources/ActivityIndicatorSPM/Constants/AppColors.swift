@@ -1,6 +1,6 @@
 import UIKit
 
-struct AppColors {
+public struct AppColors {
     static let backgroundGray = UIColor(hex: "242424")
     static let backgroundBlack = UIColor(hex: "171717")
     static let buttonGray = UIColor(hex: "363636")
