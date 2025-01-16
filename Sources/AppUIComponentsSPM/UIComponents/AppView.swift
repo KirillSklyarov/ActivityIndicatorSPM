@@ -1,6 +1,6 @@
 import UIKit
 
-enum AppViewType {
+public enum AppViewType {
     case profile
     case separator
     case details
@@ -9,7 +9,7 @@ enum AppViewType {
 
 public final class AppView: UIView {
 
-    init(type: AppViewType) {
+    public init(type: AppViewType) {
         super.init(frame: .zero)
         configure(type)
     }
