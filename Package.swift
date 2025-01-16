@@ -20,7 +20,7 @@ let package = Package(
         .target(
             name: "ActivityIndicatorSPM",
             resources: [
-                .process("Resources/Fonts")
+                .copy("Resources/Fonts")
             ]
         ),
     ]
