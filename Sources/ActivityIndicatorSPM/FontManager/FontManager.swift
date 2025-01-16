@@ -18,6 +18,11 @@ public enum FontManager {
         var filename: String {
             return self.rawValue
         }
+
+        var fontName: String {
+            // Системное имя шрифта отличается от имени файла
+            return self.rawValue.replacingOccurrences(of: "-", with: "")
+        }
     }
 
     public static func setupFonts() {
@@ -33,6 +38,12 @@ public enum FontManager {
     }
 
     private static func registerFont(name: String) {
+        // Сначала проверяем, существует ли уже шрифт
+        if UIFont(name: name.replacingOccurrences(of: "-", with: ""), size: 12) != nil {
+            print("✅ Font already registered: \(name)")
+            return
+        }
+
         let bundle = Bundle.module
 
         guard let fontURL = bundle.url(forResource: name, withExtension: "otf") else {
