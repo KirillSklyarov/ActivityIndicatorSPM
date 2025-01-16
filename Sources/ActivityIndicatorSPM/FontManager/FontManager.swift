@@ -109,11 +109,11 @@ public enum FontManager {
         }
 
         // Специально проверим .ttf файлы
-        if let ttfFiles = bundle.urls(forResourcesWithExtension: "ttf", subdirectory: nil) {
-            print("\nTTF files:")
+        if let ttfFiles = bundle.urls(forResourcesWithExtension: "otf", subdirectory: nil) {
+            print("\nOTF files:")
             ttfFiles.forEach { print($0.lastPathComponent) }
         } else {
-            print("\nNo .ttf files found")
+            print("\nNo .otf files found")
         }
     }
 }
