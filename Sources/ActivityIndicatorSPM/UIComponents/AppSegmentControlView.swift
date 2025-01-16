@@ -7,7 +7,7 @@ public final class AppSegmentControlView: UIView {
     private let viewHeight: CGFloat = 40
     private var segmentControl: CustomSegmentControl?
 
-    var onSegmentControllerValueChanged: ((Int) -> Void)?
+    public var onSegmentControllerValueChanged: ((Int) -> Void)?
 
     // MARK: - Init
     public init(frame: CGRect = .zero, items: [Any]?, defaultSelection: Int) {
