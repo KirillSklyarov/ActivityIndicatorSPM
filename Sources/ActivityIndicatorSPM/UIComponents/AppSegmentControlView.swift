@@ -23,7 +23,7 @@ public final class AppSegmentControlView: UIView {
 }
 
 // MARK: - Public methods
-extension AppSegmentControlView {
+public extension AppSegmentControlView {
     func getSegmentControll() -> CustomSegmentControl? {
         segmentControl
     }

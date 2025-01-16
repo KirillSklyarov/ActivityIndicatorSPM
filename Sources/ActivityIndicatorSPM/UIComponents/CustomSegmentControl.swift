@@ -23,7 +23,7 @@ public final class CustomSegmentControl: UISegmentedControl {
         moveOval(selectedSegmentIndex)
     }
 
-    func setSegmentColor(_ color: UIColor) {
+    public func setSegmentColor(_ color: UIColor) {
         selectedSegmentOval.backgroundColor = color
     }
 
