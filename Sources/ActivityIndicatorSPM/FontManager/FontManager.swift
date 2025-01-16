@@ -56,9 +56,9 @@ public enum FontManager {
     private static func registerFont(font: FontName) {
         let bundle = Bundle.module
 
-        // Изменим путь к файлам
-        guard let fontURL = bundle.url(forResource: "Resources/Fonts/" + font.filename, withExtension: "otf") else {
-            print("❌ Font file not found: \(font.filename) - checked path: Resources/Fonts/\(font.filename).otf")
+        // Меняем путь к файлам - теперь ищем в папке Fonts
+        guard let fontURL = bundle.url(forResource: font.filename, withExtension: "otf", subdirectory: "Fonts") else {
+            print("❌ Font file not found: \(font.filename) - checked in Fonts directory")
             return
         }
 
