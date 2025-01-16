@@ -99,10 +99,21 @@ public enum FontManager {
         print("=== Bundle Debug Info ===")
         print("Bundle path: \(bundle.bundlePath)")
         print("Available resources:")
-        if let resources = bundle.urls(forResourcesWithExtension: "ttf", subdirectory: nil) {
-            resources.forEach { print($0.path) }
+
+        // Выведем все ресурсы в бандле
+        if let resources = bundle.urls(forResourcesWithExtension: nil, subdirectory: nil) {
+            print("All resources:")
+            resources.forEach { print($0.lastPathComponent) }
         } else {
-            print("No .ttf files found")
+            print("No resources found")
+        }
+
+        // Специально проверим .ttf файлы
+        if let ttfFiles = bundle.urls(forResourcesWithExtension: "ttf", subdirectory: nil) {
+            print("\nTTF files:")
+            ttfFiles.forEach { print($0.lastPathComponent) }
+        } else {
+            print("\nNo .ttf files found")
         }
     }
 }
