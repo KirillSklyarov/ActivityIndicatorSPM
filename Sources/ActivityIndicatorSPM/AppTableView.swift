@@ -1,19 +1,19 @@
 import UIKit
 
 // Этот класс таблицы позволяет не выставлять высоту, она высчитывается автоматом
-public class AppTableView: UITableView {
-    public override var intrinsicContentSize: CGSize {
+open class AppTableView: UITableView {
+    open override var intrinsicContentSize: CGSize {
         layoutIfNeeded()
         return CGSize(width: contentSize.width, height: contentSize.height)
     }
 
-    public override var contentSize: CGSize {
+    open override var contentSize: CGSize {
         didSet {
             invalidateIntrinsicContentSize()
         }
     }
 
-    public override func reloadData() {
+    open override func reloadData() {
         super.reloadData()
         invalidateIntrinsicContentSize()
     }
@@ -21,7 +21,7 @@ public class AppTableView: UITableView {
 
 // Мы определили метод, который будет убирать сепаратор у последней ячейки
 extension AppTableView: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastCellRow = tableView.numberOfRows(inSection: indexPath.section) - 1
         if indexPath.row == lastCellRow {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
