@@ -75,11 +75,11 @@ public enum FontManager {
 
         var error: Unmanaged<CFError>?
         if CTFontManagerRegisterGraphicsFont(font, &error) {
-            print("✅ Successfully registered font: \(font)")
+//            print("✅ Successfully registered font: \(font)")
         } else {
             if let error = error?.takeRetainedValue() {
                 let description = CFErrorCopyDescription(error)
-                print("❌ Error registering font: \(description)")
+                print("❌ Error registering font: \(String(describing: description))")
             }
         }
     }
@@ -91,29 +91,6 @@ public enum FontManager {
             } else {
                 print("❌ Not available: \(font.fontName)")
             }
-        }
-    }
-
-    public static func debugBundle() {
-        let bundle = Bundle.module
-        print("=== Bundle Debug Info ===")
-        print("Bundle path: \(bundle.bundlePath)")
-        print("Available resources:")
-
-        // Выведем все ресурсы в бандле
-        if let resources = bundle.urls(forResourcesWithExtension: nil, subdirectory: nil) {
-            print("All resources:")
-            resources.forEach { print($0.lastPathComponent) }
-        } else {
-            print("No resources found")
-        }
-
-        // Специально проверим .ttf файлы
-        if let ttfFiles = bundle.urls(forResourcesWithExtension: "otf", subdirectory: nil) {
-            print("\nOTF files:")
-            ttfFiles.forEach { print($0.lastPathComponent) }
-        } else {
-            print("\nNo .otf files found")
         }
     }
 }
