@@ -20,21 +20,33 @@ public enum FontManager {
         }
 
         var fontName: String {
-            // Системное имя шрифта отличается от имени файла
-            return self.rawValue.replacingOccurrences(of: "-", with: "")
+            switch self {
+            case .black: return "SFProRounded-Black"
+            case .bold: return "SFProRounded-Bold"
+            case .heavy: return "SFProRounded-Heavy"
+            case .light: return "SFProRounded-Light"
+            case .medium: return "SFProRounded-Medium"
+            case .regular: return "SFProRounded-Regular"
+            case .semibold: return "SFProRounded-Semibold"
+            case .thin: return "SFProRounded-Thin"
+            case .ultraLight: return "SFProRounded-Ultralight"
+            }
         }
     }
 
     public static func setupFonts() {
-        FontName.allCases.forEach { font in
-            registerFont(name: font.filename)
+        let registeredFonts = Set(UIFont.familyNames.flatMap { UIFont.fontNames(forFamilyName: $0) })
 
-            if UIFont(name: font.rawValue, size: 12) != nil {
-                print("✅ Font successfully registered: \(font.rawValue)")
+        FontName.allCases.forEach { font in
+            if registeredFonts.contains(font.fontName) {
+                print("✅ Font already registered: \(font.fontName)")
             } else {
-                print("❌ Failed to register font: \(font.rawValue)")
+                registerFont(name: font.fontName)
             }
         }
+
+        // Проверка после регистрации
+        printAvailableFonts()
     }
 
     private static func isFontRegistered(_ postScriptName: String) -> Bool {
