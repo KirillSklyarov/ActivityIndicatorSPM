@@ -1,8 +1,9 @@
-import Foundation
+import UIKit
 import CoreGraphics
 import CoreText
 
 public enum FontManager {
+
     public enum FontName: String, CaseIterable {
         case black = "SF-Pro-Rounded-Black"
         case bold = "SF-Pro-Rounded-Bold"
@@ -22,6 +23,12 @@ public enum FontManager {
     public static func setupFonts() {
         FontName.allCases.forEach { font in
             registerFont(name: font.filename)
+            
+            if UIFont(name: font.rawValue, size: 12) != nil {
+                print("✅ Font successfully registered: \(font.rawValue)")
+            } else {
+                print("❌ Failed to register font: \(font.rawValue)")
+            }
         }
     }
 
