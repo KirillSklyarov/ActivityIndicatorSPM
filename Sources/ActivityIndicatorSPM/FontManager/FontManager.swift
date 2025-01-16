@@ -93,4 +93,16 @@ public enum FontManager {
             }
         }
     }
+
+    public static func debugBundle() {
+        let bundle = Bundle.module
+        print("=== Bundle Debug Info ===")
+        print("Bundle path: \(bundle.bundlePath)")
+        print("Available resources:")
+        if let resources = bundle.urls(forResourcesWithExtension: "ttf", subdirectory: nil) {
+            resources.forEach { print($0.path) }
+        } else {
+            print("No .ttf files found")
+        }
+    }
 }
