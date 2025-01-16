@@ -23,7 +23,7 @@ public enum FontManager {
     public static func setupFonts() {
         FontName.allCases.forEach { font in
             registerFont(name: font.filename)
-            
+
             if UIFont(name: font.rawValue, size: 12) != nil {
                 print("✅ Font successfully registered: \(font.rawValue)")
             } else {
@@ -35,7 +35,7 @@ public enum FontManager {
     private static func registerFont(name: String) {
         let bundle = Bundle.module
 
-        guard let fontURL = bundle.url(forResource: name, withExtension: "ttf") else {
+        guard let fontURL = bundle.url(forResource: name, withExtension: "otf") else {
             print("Failed to find font in bundle")
             return
         }
