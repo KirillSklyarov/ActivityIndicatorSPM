@@ -1,7 +1,7 @@
 import UIKit
 
 // Здесь делается фон и на него накладывается сегментКонтрол
-final class AppSegmentControlView: UIView {
+public final class AppSegmentControlView: UIView {
 
     // MARK: - Properties&Callbacks
     private let viewHeight: CGFloat = 40
@@ -10,7 +10,7 @@ final class AppSegmentControlView: UIView {
     var onSegmentControllerValueChanged: ((Int) -> Void)?
 
     // MARK: - Init
-    init(frame: CGRect = .zero, items: [Any]?, defaultSelection: Int) {
+    public init(frame: CGRect = .zero, items: [Any]?, defaultSelection: Int) {
         super.init(frame: frame)
         segmentControl = CustomSegmentControl(items: items, defaultSelection: defaultSelection)
         setupUI()
