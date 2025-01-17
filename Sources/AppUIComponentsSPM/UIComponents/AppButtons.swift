@@ -46,7 +46,7 @@ private extension AppButtons {
             let image = UIImage(systemName: "plus")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
         case .grayPrice:
-            titleLabel?.font = AppFontsEnum.semibold(size: 14).font
+            titleLabel?.font = AppFonts.semibold(size: 14).font
             setTitleColor(.white, for: .normal)
             backgroundColor = AppColors.buttonGray
             layer.cornerRadius = 14
@@ -67,7 +67,7 @@ private extension AppButtons {
             var config = UIButton.Configuration.filled()
             config.title = title
             config.attributedTitle = AttributedString(title, attributes: AttributeContainer([
-                .font: AppFontsEnum.bold(size: 14).font])
+                .font: AppFonts.bold(size: 14).font])
             )
             config.baseForegroundColor = .white
             config.baseBackgroundColor = AppColors.buttonOrange
@@ -95,7 +95,7 @@ private extension AppButtons {
         case .errorRetry:
             var config = UIButton.Configuration.filled()
             config.attributedTitle = AttributedString("Повторить", attributes: AttributeContainer([
-                .font: AppFontsEnum.bold(size: 16).font,
+                .font: AppFonts.bold(size: 16).font,
                 .foregroundColor: AppColors.grayFont])
             )
             config.baseBackgroundColor = AppColors.buttonGray
@@ -113,19 +113,19 @@ private extension AppButtons {
             var config = UIButton.Configuration.filled()
             config.title = title
             config.attributedTitle = AttributedString(title, attributes:
-                                                        AttributeContainer([ .font: AppFontsEnum.bold(size: 14).font]))
+                                                        AttributeContainer([ .font: AppFonts.bold(size: 14).font]))
             config.baseForegroundColor = .white
             config.baseBackgroundColor = AppColors.buttonGray
             config.cornerStyle = .capsule
             configuration = config
             widthAnchor.constraint(equalToConstant: 150).isActive = true
         case .actionSheetButton:
-            let attributedTitle = NSAttributedString(string: text ?? "", attributes: [.foregroundColor: AppColors.buttonOrange, .font: AppFontsEnum.semibold(size: 22).font])
+            let attributedTitle = NSAttributedString(string: text ?? "", attributes: [.foregroundColor: AppColors.buttonOrange, .font: AppFonts.semibold(size: 22).font])
             setAttributedTitle(attributedTitle, for: .normal)
         case .promoButton:
             setTitle("Ввести промокод", for: .normal)
             setTitleColor(.white, for: .normal)
-            titleLabel?.font = AppFontsEnum.bold(size: 20).font
+            titleLabel?.font = AppFonts.bold(size: 20).font
             backgroundColor = AppColors.backgroundGray
             layer.cornerRadius = 10
             layer.cornerRadius = 20
@@ -155,7 +155,7 @@ private extension AppButtons {
             config.image = nil
             config.attributedTitle = AttributedString(title, attributes: AttributeContainer([
                 .foregroundColor: UIColor.white,
-                .font: AppFontsEnum.bold(size: 18).font]
+                .font: AppFonts.bold(size: 18).font]
             ))
             config.cornerStyle = .capsule
             config.background.backgroundColor = AppColors.buttonOrange
@@ -170,7 +170,7 @@ private extension AppButtons {
             config.image = nil
             config.attributedTitle = AttributedString(title, attributes: AttributeContainer([
                 .foregroundColor: UIColor.white,
-                .font: AppFontsEnum.bold(size: 18).font]
+                .font: AppFonts.bold(size: 18).font]
             ))
             config.cornerStyle = .capsule
             config.background.backgroundColor = AppColors.buttonGray
@@ -187,7 +187,7 @@ private extension AppButtons {
             config.image = image
             config.attributedTitle = AttributedString(title, attributes: AttributeContainer([
                 .foregroundColor: UIColor.white,
-                .font: AppFontsEnum.bold(size: 18).font]
+                .font: AppFonts.bold(size: 18).font]
             ))
             config.cornerStyle = .capsule
             config.background.backgroundColor = AppColors.buttonOrange

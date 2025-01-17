@@ -29,7 +29,7 @@ private extension AppLabel {
         case .priceGrayRoundLabel:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.bold(size: 12).font
+            font = AppFonts.bold(size: 12).font
             textAlignment = .center
             self.numberOfLines = 1
             backgroundColor = .white.withAlphaComponent(0.2)
@@ -39,42 +39,42 @@ private extension AppLabel {
         case .tinyTitle:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.regular(size: 12).font
+            font = AppFonts.regular(size: 12).font
             textAlignment = alignment
         case .smallTitle:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.regular(size: 14).font
+            font = AppFonts.regular(size: 14).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
         case .basicTitle:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.semibold(size: 16).font
+            font = AppFonts.semibold(size: 16).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
         case .maxiTitle:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.semibold(size: 18).font
+            font = AppFonts.semibold(size: 18).font
             textAlignment = alignment
             self.numberOfLines = 0
         case .smallHeader:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.bold(size: 22).font
+            font = AppFonts.bold(size: 22).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
         case .header:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.bold(size: 26).font
+            font = AppFonts.bold(size: 26).font
             textAlignment = alignment
             self.numberOfLines = 1
         case .maxiHeader:
             self.text = text
             self.textColor = textColor
-            font = AppFontsEnum.bold(size: 40).font
+            font = AppFonts.bold(size: 40).font
             textAlignment = alignment
             self.numberOfLines = 1
         }
