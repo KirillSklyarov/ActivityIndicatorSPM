@@ -8,7 +8,7 @@ public enum AppFonts {
     case semibold(size: CGFloat)
     case medium(size: CGFloat)
 
-    var font: UIFont {
+    public var font: UIFont {
         switch self {
         case .regular(size: let size): return UIFont(name: "SFProRounded-Regular", size: size) ?? basicFont
         case .medium(size: let size): return UIFont(name: "SFProRounded-Medium", size: size) ?? basicFont
