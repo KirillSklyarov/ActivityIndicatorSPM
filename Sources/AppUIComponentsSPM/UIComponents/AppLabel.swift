@@ -22,7 +22,7 @@ public final class AppLabel: InsetLabel {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setPrice(_ item: Item) {
+    public func setPrice(_ item: Item) {
         let itemPrice = getPrice(item)
         self.text = itemPrice
     }
