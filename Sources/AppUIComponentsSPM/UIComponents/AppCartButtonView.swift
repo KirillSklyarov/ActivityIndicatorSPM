@@ -7,9 +7,9 @@ public enum CartButtonViewType {
 
 public final class AppCartButtonView: UIView {
 
-    var cartButton: AppButtons?
-    var isCart: Bool = false
-    var currentPrice = 0
+    public var cartButton: AppButtons?
+    public var isCart: Bool = false
+    public var currentPrice = 0
 
     public var onCartButtonTapped: (() -> Void)?
 
