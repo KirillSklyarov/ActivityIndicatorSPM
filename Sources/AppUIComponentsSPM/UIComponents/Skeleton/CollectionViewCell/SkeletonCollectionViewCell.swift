@@ -1,7 +1,6 @@
 import UIKit
-import AppUIComponentsSPM
 
-final class SkeletonCollectionViewCell: UICollectionViewCell {
+public final class SkeletonCollectionViewCell: UICollectionViewCell {
 
     // MARK: - UI Properties
     private lazy var darkPlaceholderTitle = AppLabel(type: .header, text: "Загружаем", textColor: .darkGray)
@@ -9,7 +8,7 @@ final class SkeletonCollectionViewCell: UICollectionViewCell {
     private var gradientLayer = CAGradientLayer()
 
     // MARK: - Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
@@ -18,7 +17,7 @@ final class SkeletonCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
     }

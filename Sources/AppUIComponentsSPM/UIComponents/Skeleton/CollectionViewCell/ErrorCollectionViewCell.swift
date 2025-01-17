@@ -1,7 +1,6 @@
 import UIKit
-import AppUIComponentsSPM
 
-final class ErrorCollectionViewCell: UICollectionViewCell {
+public final class ErrorCollectionViewCell: UICollectionViewCell {
 
     // MARK: - UI Properties
     private lazy var iconImageView = AppImageView(type: .errorXMark)
@@ -10,10 +9,10 @@ final class ErrorCollectionViewCell: UICollectionViewCell {
     private lazy var contentStackView = AppStackView([iconImageView, titleLabel, retryButton], axis: .vertical, alignment: .center, distribution: .equalSpacing)
 
     // MARK: - Properties
-    var onRetryButtonTapped: (() -> Void)?
+    public var onRetryButtonTapped: (() -> Void)?
 
     // MARK: - Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }

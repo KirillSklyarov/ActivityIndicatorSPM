@@ -1,12 +1,12 @@
 import UIKit
 
-final class CustomSkeletonView: UIView {
+public final class CustomSkeletonView: UIView {
 
     // MARK: - Properties
     private var gradientLayer = CAGradientLayer()
 
     // MARK: - Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
@@ -15,7 +15,7 @@ final class CustomSkeletonView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
     }

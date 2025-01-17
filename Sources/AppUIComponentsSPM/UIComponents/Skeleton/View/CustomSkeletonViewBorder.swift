@@ -1,7 +1,6 @@
 import UIKit
-import AppUIComponentsSPM
 
-final class CustomSkeletonViewBorder: UIView {
+public final class CustomSkeletonViewBorder: UIView {
 
     // MARK: - Properties
     private lazy var fillView = AppView(type: .details)
@@ -10,7 +9,7 @@ final class CustomSkeletonViewBorder: UIView {
     private let viewHeight: CGFloat = 200
 
     // MARK: - Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
@@ -19,7 +18,7 @@ final class CustomSkeletonViewBorder: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
         setupAnimation()

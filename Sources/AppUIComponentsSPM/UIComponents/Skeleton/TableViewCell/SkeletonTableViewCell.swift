@@ -1,7 +1,6 @@
 import UIKit
-import AppUIComponentsSPM
 
-final class SkeletonTableViewCell: UITableViewCell {
+public final class SkeletonTableViewCell: UITableViewCell {
 
     // MARK: - Properties
     private lazy var darkPlaceholderTitle = AppLabel(type: .header, text: "Загружаем", textColor: .darkGray)
@@ -9,7 +8,7 @@ final class SkeletonTableViewCell: UITableViewCell {
     private var gradientLayer = CAGradientLayer()
 
     // MARK: - Init
-    override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
     }
@@ -18,7 +17,7 @@ final class SkeletonTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
     }

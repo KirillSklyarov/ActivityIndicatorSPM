@@ -1,13 +1,12 @@
 import UIKit
-import AppUIComponentsSPM
 
-final class SkeletonCollectionViewCell2: UICollectionViewCell {
+public final class SkeletonCollectionViewCell2: UICollectionViewCell {
 
     // MARK: - Properties
     private var gradientLayer = CAGradientLayer()
 
     // MARK: - Init
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
@@ -16,7 +15,7 @@ final class SkeletonCollectionViewCell2: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = bounds
     }
