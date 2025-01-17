@@ -1,6 +1,6 @@
 import UIKit
 
-enum AppImageViewType {
+public enum AppImageViewType {
     case payment
     case dodoCoins
     case dodoCoinsLarge
@@ -22,9 +22,9 @@ enum AppImageViewType {
     case errorXMark
 }
 
-final class AppImageView: UIImageView {
+public final class AppImageView: UIImageView {
 
-    init(type: AppImageViewType, image: UIImage? = nil) {
+    public init(type: AppImageViewType, image: UIImage? = nil) {
         super.init(frame: .zero)
         configure(type, image: image)
     }
