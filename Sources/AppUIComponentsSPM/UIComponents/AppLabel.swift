@@ -21,11 +21,6 @@ public final class AppLabel: InsetLabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    public func setPrice(_ item: Item) {
-        let itemPrice = getPrice(item)
-        self.text = itemPrice
-    }
 }
 
 private extension AppLabel {
@@ -82,15 +77,6 @@ private extension AppLabel {
             font = AppFontsEnum.bold(size: 40).font
             textAlignment = alignment
             self.numberOfLines = 1
-        }
-    }
-
-    func getPrice(_ item: Item) -> String {
-        if let oneSize = item.itemSize.oneSize {
-            return "\(oneSize.price) ₽"
-        } else {
-            let price = item.itemSize.medium?.price ?? 0
-            return "от \(price) ₽"
         }
     }
 }
