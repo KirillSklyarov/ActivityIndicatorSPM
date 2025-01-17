@@ -11,7 +11,7 @@ public final class AppSegmentControl: UIView {
     // MARK: - Properties
     var segmentView: AppSegmentControlView?
 
-    var onSegmentValueChanged: ((Int) -> Void)?
+    public var onSegmentValueChanged: ((Int) -> Void)?
 
     // MARK: - Init
     public init(type: AppSegmentControlType) {
@@ -25,7 +25,7 @@ public final class AppSegmentControl: UIView {
 }
 
 // MARK: - Public methods
-extension AppSegmentControl {
+public extension AppSegmentControl {
     func setDefaultSelectedSegment(_ index: Int) {
         segmentView?.setDefaultSelectedSegment(index)
     }
