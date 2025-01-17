@@ -24,7 +24,7 @@ public enum AppButtonType {
 
 public final class AppButtons: UIButton {
 
-    var onButtonTapped: (() -> Void)?
+    public var onButtonTapped: (() -> Void)?
 
     public init(type: AppButtonType, text: String? = nil) {
         super.init(frame: .zero)
