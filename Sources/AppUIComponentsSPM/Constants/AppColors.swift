@@ -9,4 +9,7 @@ public struct AppColors {
     public static let grayFont = UIColor(hex: "727272")
     public static let sberGreen = UIColor(hex: "06c906")
     public static let detailsBackground = UIColor(hex: "485460")
+
+    public static let dismissButtonBackgroundStandard = UIColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 0.2)
+
 }

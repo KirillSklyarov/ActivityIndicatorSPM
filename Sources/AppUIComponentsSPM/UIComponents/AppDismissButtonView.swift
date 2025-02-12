@@ -31,12 +31,9 @@ private extension AppDismissButtonView {
     func configure(_ type: DismissButtonType) {
         switch type {
         case .standard:
-            let backColor = AppColors.backgroundGray.withAlphaComponent(0.2)
-            setColors(xColor: .white, backgroundColor: backColor)
-
+            setColors(xColor: .white, backgroundColor: AppColors.dismissButtonBackgroundStandard)
         case .chevron: setChevron()
-        case .storiesWhite:
-            setColors(xColor: AppColors.buttonGray, backgroundColor: .white)
+        case .storiesWhite: setColors(xColor: AppColors.buttonGray, backgroundColor: .white)
         }
     }
 }
