@@ -48,8 +48,8 @@ private extension AppNavigationBarView {
         guard let headerView else { return }
         addSubviews(headerView)
         setupLayout(headerView)
-        headerView.backgroundColor = AppColors.backgroundGray
-        headerView.isOpaque = true
+//        headerView.backgroundColor = AppColors.backgroundGray
+//        headerView.isOpaque = true
     }
 
     func setupAction() {
