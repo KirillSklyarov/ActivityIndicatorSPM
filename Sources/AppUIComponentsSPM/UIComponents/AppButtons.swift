@@ -93,6 +93,7 @@ private extension AppButtons {
             widthAnchor.constraint(equalToConstant: 40).isActive = true
             layer.cornerRadius = 40 / 2
             layer.masksToBounds = true
+            isOpaque = true
         case .errorRetry:
             var config = UIButton.Configuration.filled()
             config.attributedTitle = AttributedString("Повторить", attributes: AttributeContainer([
