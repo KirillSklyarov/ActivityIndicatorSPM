@@ -28,18 +28,16 @@ public final class AppNavigationBarView: UIView {
 
 private extension AppNavigationBarView {
     func configure(_ type: AppNavigationBarViewType) {
+        let view: AppNavigationHeaderView =
         switch type {
-        case .personal:
-            headerView = AppNavigationHeaderView(title: "Личные данные")
-        case .delivery:
-            headerView = AppNavigationHeaderView(title: "Доставка")
-        case .chooseAddress:
-            headerView = AppNavigationHeaderView(title: "Адреса доставки")
-        case .payment:
-            headerView = AppNavigationHeaderView(title: "Оплата")
-        case .cart:
-            headerView = AppNavigationHeaderView(title: "Корзина")
+        case .personal: AppNavigationHeaderView(title: "Личные данные")
+        case .delivery: AppNavigationHeaderView(title: "Доставка")
+        case .chooseAddress: AppNavigationHeaderView(title: "Адреса доставки")
+        case .payment: AppNavigationHeaderView(title: "Оплата")
+        case .cart: AppNavigationHeaderView(title: "Корзина")
         }
+
+        headerView = view
 
         setupUI()
     }
@@ -48,8 +46,6 @@ private extension AppNavigationBarView {
         guard let headerView else { return }
         addSubviews(headerView)
         setupLayout(headerView)
-//        headerView.backgroundColor = AppColors.backgroundGray
-//        headerView.isOpaque = true
     }
 
     func setupAction() {

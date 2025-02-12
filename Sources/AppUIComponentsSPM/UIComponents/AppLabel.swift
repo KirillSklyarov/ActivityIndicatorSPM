@@ -54,6 +54,8 @@ private extension AppLabel {
             font = AppFonts.semibold(size: 16).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
+            backgroundColor = AppColors.backgroundGray
+            isOpaque = true
         case .maxiTitle:
             self.text = text
             self.textColor = textColor
