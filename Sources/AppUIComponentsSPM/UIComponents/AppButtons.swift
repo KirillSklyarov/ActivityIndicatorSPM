@@ -84,6 +84,7 @@ private extension AppButtons {
             widthAnchor.constraint(equalToConstant: 40).isActive = true
             layer.cornerRadius = 40 / 2
             layer.masksToBounds = true
+            isOpaque = true
         case .personal:
             let image = UIImage(systemName: "hexagon.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
