@@ -31,7 +31,8 @@ private extension AppDismissButtonView {
     func configure(_ type: DismissButtonType) {
         switch type {
         case .standard:
-            setColors(xColor: .white, backgroundColor: AppColors.backgroundGray.withAlphaComponent(0.2))
+            let backColor = AppColors.backgroundGray.withAlphaComponent(0.2)
+            setColors(xColor: .white, backgroundColor: backColor)
 
         case .chevron: setChevron()
         case .storiesWhite:
@@ -61,6 +62,7 @@ private extension AppDismissButtonView {
 
         layer.cornerRadius = viewSize / 2
         layer.masksToBounds = true
+        isOpaque = true
 
         addSubviews(dismissButton)
         
