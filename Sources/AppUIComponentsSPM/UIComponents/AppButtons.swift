@@ -76,6 +76,8 @@ private extension AppButtons {
         case .grayXmark:
             let image = UIImage(systemName: "xmark")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
+            backgroundColor = AppColors.backgroundGray
+            isOpaque = true
         case .profileChat:
             let image = UIImage(systemName: "phone.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
@@ -83,8 +85,6 @@ private extension AppButtons {
             heightAnchor.constraint(equalToConstant: 40).isActive = true
             widthAnchor.constraint(equalToConstant: 40).isActive = true
             layer.cornerRadius = 40 / 2
-            adjustsImageWhenHighlighted = false  // Отключает затемнение при нажатии
-            showsTouchWhenHighlighted = false    // Отключает подсветку при нажатии
             layer.masksToBounds = true
             isOpaque = true
         case .personal:
