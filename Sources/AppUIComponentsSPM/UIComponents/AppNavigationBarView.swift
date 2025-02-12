@@ -11,7 +11,7 @@ public enum AppNavigationBarViewType {
 public final class AppNavigationBarView: UIView {
 
     // MARK: - Properties
-    var headerView: AppNavigationHeaderView?
+    private var headerView: AppNavigationHeaderView?
     public var onDismissButtonTapped: (() -> Void)?
 
     // MARK: - Init
@@ -41,9 +41,15 @@ private extension AppNavigationBarView {
             headerView = AppNavigationHeaderView(title: "Корзина")
         }
 
+        setupUI()
+    }
+
+    func setupUI() {
         guard let headerView else { return }
         addSubviews(headerView)
         setupLayout(headerView)
+        headerView.backgroundColor = AppColors.backgroundGray
+        headerView.isOpaque = true
     }
 
     func setupAction() {
