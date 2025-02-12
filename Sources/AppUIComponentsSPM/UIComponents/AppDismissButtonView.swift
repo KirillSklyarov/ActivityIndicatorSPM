@@ -59,7 +59,6 @@ private extension AppDismissButtonView {
 
         layer.cornerRadius = viewSize / 2
         layer.masksToBounds = true
-        isOpaque = true
 
         addSubviews(dismissButton)
         
