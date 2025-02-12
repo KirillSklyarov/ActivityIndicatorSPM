@@ -125,6 +125,7 @@ private extension AppButtons {
         case .actionSheetButton:
             let attributedTitle = NSAttributedString(string: text ?? "", attributes: [.foregroundColor: AppColors.buttonOrange, .font: AppFonts.semibold(size: 22).font])
             setAttributedTitle(attributedTitle, for: .normal)
+            backgroundColor = AppColors.backgroundGray
             isOpaque = true
         case .promoButton:
             setTitle("Ввести промокод", for: .normal)
