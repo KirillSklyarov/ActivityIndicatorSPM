@@ -47,6 +47,7 @@ private extension AppLabel {
             font = AppFonts.regular(size: 14).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
+            isOpaque = true
         case .basicTitle:
             self.text = text
             self.textColor = textColor

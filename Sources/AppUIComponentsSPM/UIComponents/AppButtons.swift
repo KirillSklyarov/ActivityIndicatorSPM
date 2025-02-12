@@ -76,7 +76,6 @@ private extension AppButtons {
         case .grayXmark:
             let image = UIImage(systemName: "xmark")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
-            backgroundColor = AppColors.backgroundGray
             isOpaque = true
         case .profileChat:
             let image = UIImage(systemName: "phone.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
