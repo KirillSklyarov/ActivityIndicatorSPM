@@ -60,6 +60,8 @@ private extension AppLabel {
             font = AppFonts.semibold(size: 18).font
             textAlignment = alignment
             self.numberOfLines = 0
+            backgroundColor = AppColors.backgroundGray
+            isOpaque = true
         case .smallHeader:
             self.text = text
             self.textColor = textColor
