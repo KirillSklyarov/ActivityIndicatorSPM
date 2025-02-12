@@ -83,6 +83,8 @@ private extension AppButtons {
             heightAnchor.constraint(equalToConstant: 40).isActive = true
             widthAnchor.constraint(equalToConstant: 40).isActive = true
             layer.cornerRadius = 40 / 2
+            adjustsImageWhenHighlighted = false  // Отключает затемнение при нажатии
+            showsTouchWhenHighlighted = false    // Отключает подсветку при нажатии
             layer.masksToBounds = true
             isOpaque = true
         case .personal:
