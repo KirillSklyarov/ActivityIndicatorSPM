@@ -56,6 +56,8 @@ private extension AppButtons {
         case .orangeDismiss:
             setTitle("Закрыть", for: .normal)
             setTitleColor(AppColors.buttonOrange, for: .normal)
+            titleLabel?.backgroundColor = AppColors.backgroundGray
+            titleLabel?.isOpaque = true
         case .mapEdit:
             let image = UIImage(systemName: "pencil")?.withTintColor(AppColors.buttonGray, renderingMode: .alwaysOriginal)
             contentHorizontalAlignment = .fill
