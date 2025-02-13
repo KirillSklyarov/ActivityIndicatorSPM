@@ -79,10 +79,7 @@ private extension AppImageView {
             widthAnchor.constraint(equalToConstant: 70).isActive = true
         case .promoImage:
             contentMode = .scaleAspectFit
-            heightAnchor.constraint(equalToConstant: 150).isActive = true
-            widthAnchor.constraint(equalToConstant: 150).isActive = true
-            layer.cornerRadius = 14
-            layer.masksToBounds = true
+//            layer.masksToBounds = true
         case .mapPin:
             self.image = UIImage(systemName:  "mappin")?.withTintColor(AppColors.buttonOrange, renderingMode: .alwaysOriginal)
             contentMode = .scaleAspectFit
