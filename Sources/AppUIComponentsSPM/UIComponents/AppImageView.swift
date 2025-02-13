@@ -61,6 +61,8 @@ private extension AppImageView {
             widthAnchor.constraint(equalToConstant: 150).isActive = true
         case .justView:
             contentMode = .scaleAspectFit
+            backgroundColor = backgroundColor
+            isOpaque = true
         case .stories:
             contentMode = .scaleAspectFill
             layer.cornerRadius = 20
