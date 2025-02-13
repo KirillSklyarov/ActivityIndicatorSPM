@@ -24,7 +24,7 @@ public final class AppLabel: InsetLabel {
 }
 
 private extension AppLabel {
-    func configureLabel(type: LabelType, text: String?, textColor: UIColor?, alignment: NSTextAlignment, numberOfLines: Int) {
+    func configureLabel(type: LabelType, text: String?, textColor: UIColor?, alignment: NSTextAlignment, numberOfLines: Int, backgroundColor: UIColor? = AppColors.backgroundGray) {
         switch type {
         case .priceGrayRoundLabel:
             self.text = text
@@ -32,7 +32,7 @@ private extension AppLabel {
             font = AppFonts.bold(size: 12).font
             textAlignment = .center
             self.numberOfLines = 1
-            backgroundColor = .white.withAlphaComponent(0.2)
+            self.backgroundColor = .white.withAlphaComponent(0.2)
             layer.cornerRadius = 14
             clipsToBounds = true
             contentInset = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
@@ -47,7 +47,7 @@ private extension AppLabel {
             font = AppFonts.regular(size: 14).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
-            backgroundColor = AppColors.backgroundGray
+            self.backgroundColor = backgroundColor
             isOpaque = true
         case .basicTitle:
             self.text = text
@@ -55,7 +55,7 @@ private extension AppLabel {
             font = AppFonts.semibold(size: 16).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
-            backgroundColor = AppColors.backgroundGray
+            self.backgroundColor = backgroundColor
             isOpaque = true
         case .maxiTitle:
             self.text = text
@@ -63,7 +63,7 @@ private extension AppLabel {
             font = AppFonts.semibold(size: 18).font
             textAlignment = alignment
             self.numberOfLines = 0
-            backgroundColor = AppColors.backgroundGray
+            self.backgroundColor = backgroundColor
             isOpaque = true
         case .smallHeader:
             self.text = text
@@ -71,7 +71,7 @@ private extension AppLabel {
             font = AppFonts.bold(size: 22).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
-//            backgroundColor = AppColors.backgroundGray
+            self.backgroundColor = backgroundColor
             isOpaque = true
         case .header:
             self.text = text
