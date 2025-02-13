@@ -50,8 +50,17 @@ private extension AppImageView {
             self.backgroundColor = backgroundColor
             isOpaque = true
         case .chevronDown:
-            self.image = UIImage(systemName: "chevron.down")?.withTintColor(.white, renderingMode: .alwaysOriginal)
-            contentMode = .scaleAspectFit
+//            self.image = UIImage(systemName: "chevron.down")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+//            contentMode = .scaleAspectFit
+
+            let config = UIImage.SymbolConfiguration(scale: .medium)
+                self.image = UIImage(systemName: "chevron.down", withConfiguration: config)?
+                    .withTintColor(.white, renderingMode: .alwaysOriginal)
+                    .withBaselineOffset(fromBottom: 0)
+                self.contentMode = .scaleAspectFit
+                self.isOpaque = true // Добавляем это
+                self.backgroundColor = .clear // И это
+
         case .hit:
             self.image = UIImage(named: "hit2")
             contentMode = .scaleAspectFit
