@@ -4,6 +4,7 @@ public enum DismissButtonType {
     case standard
     case chevron
     case storiesWhite
+    case chat
 }
 
 public final class AppDismissButtonView: UIView {
@@ -27,6 +28,7 @@ public final class AppDismissButtonView: UIView {
     }
 }
 
+// MARK: - Configure
 private extension AppDismissButtonView {
     func configure(_ type: DismissButtonType) {
         switch type {
@@ -35,19 +37,8 @@ private extension AppDismissButtonView {
         case .chevron: setChevron()
         case .storiesWhite:
             setColors(xColor: AppColors.buttonGray, backgroundColor: .white)
-        }
-    }
-}
-
-// MARK: - Setup actions
-private extension AppDismissButtonView {
-    func setupAction() {
-        setupDismissButtonAction()
-    }
-
-    func setupDismissButtonAction() {
-        dismissButton.onButtonTapped = { [weak self] in
-            self?.onButtonTapped?()
+        case .chat:
+            dismissButton = AppButtons(type: .profileChat)
         }
     }
 }
@@ -72,6 +63,19 @@ private extension AppDismissButtonView {
     }
 }
 
+// MARK: - Setup actions
+private extension AppDismissButtonView {
+    func setupAction() {
+        setupDismissButtonAction()
+    }
+
+    func setupDismissButtonAction() {
+        dismissButton.onButtonTapped = { [weak self] in
+            self?.onButtonTapped?()
+        }
+    }
+}
+
 // MARK: - Supporting methods
 private extension AppDismissButtonView {
     func setColors(xColor: UIColor, backgroundColor: UIColor) {
@@ -79,7 +83,7 @@ private extension AppDismissButtonView {
         dismissButton.setImage(image, for: .normal)
         self.backgroundColor = backgroundColor
         dismissButton.backgroundColor = backgroundColor
-        dismissButton.isOpaque = true
+//        dismissButton.isOpaque = true
     }
 
     func setChevron() {
