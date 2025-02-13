@@ -47,6 +47,8 @@ private extension AppImageView {
         case .courier:
             self.image = UIImage(systemName: "figure.hiking")?.withTintColor(AppColors.buttonOrange, renderingMode: .alwaysOriginal)
             contentMode = .scaleAspectFit
+            self.backgroundColor = backgroundColor
+            isOpaque = true
         case .chevronDown:
             self.image = UIImage(systemName: "chevron.down")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             contentMode = .scaleAspectFit
