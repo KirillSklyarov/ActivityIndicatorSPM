@@ -24,9 +24,9 @@ public enum AppImageViewType {
 
 public final class AppImageView: UIImageView {
 
-    public init(type: AppImageViewType, image: UIImage? = nil) {
+    public init(type: AppImageViewType, image: UIImage? = nil, backgroundColor: UIColor? = nil) {
         super.init(frame: .zero)
-        configure(type, image: image)
+        configure(type, image: image, backgroundColor: backgroundColor)
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +35,7 @@ public final class AppImageView: UIImageView {
 }
 
 private extension AppImageView {
-    func configure(_ type: AppImageViewType, image: UIImage? = nil) {
+    func configure(_ type: AppImageViewType, image: UIImage? = nil, backgroundColor: UIColor? = nil) {
         switch type {
         case .payment:
             self.image = image
@@ -61,7 +61,7 @@ private extension AppImageView {
             widthAnchor.constraint(equalToConstant: 150).isActive = true
         case .justView:
             contentMode = .scaleAspectFit
-            backgroundColor = backgroundColor
+            self.backgroundColor = backgroundColor
             isOpaque = true
         case .stories:
             contentMode = .scaleAspectFill
