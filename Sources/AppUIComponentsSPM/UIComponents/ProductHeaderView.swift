@@ -70,7 +70,8 @@ private extension ProductHeaderView {
     // Делаем для тайтла изменяемый размер, чтобы он подстраивался если название длинное (например, у коктейлей)
     func configureTitleLabel() {
         titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.backgroundColor = blurView.backgroundColor
+//        titleLabel.backgroundColor = blurView.backgroundColor
+        titleLabel.isOpaque = true
     }
 
     func setupLayout() {
