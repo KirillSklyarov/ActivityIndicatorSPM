@@ -39,6 +39,7 @@ private extension AppDismissButtonView {
             setColors(xColor: AppColors.buttonGray, backgroundColor: .white)
         case .chat:
             dismissButton = AppButtons(type: .profileChat)
+            setColors(xColor: .white, backgroundColor: AppColors.backgroundGray)
         }
     }
 }
@@ -79,8 +80,8 @@ private extension AppDismissButtonView {
 // MARK: - Supporting methods
 private extension AppDismissButtonView {
     func setColors(xColor: UIColor, backgroundColor: UIColor) {
-        let image = UIImage(systemName: "xmark")?.withTintColor(xColor, renderingMode: .alwaysOriginal)
-        dismissButton.setImage(image, for: .normal)
+//        let image = UIImage(systemName: "xmark")?.withTintColor(xColor, renderingMode: .alwaysOriginal)
+//        dismissButton.setImage(image, for: .normal)
         self.backgroundColor = backgroundColor
         dismissButton.backgroundColor = backgroundColor
 //        dismissButton.isOpaque = true
