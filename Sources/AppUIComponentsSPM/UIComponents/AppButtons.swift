@@ -78,25 +78,20 @@ private extension AppButtons {
         case .grayXmark:
             let image = UIImage(systemName: "xmark")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
-            isOpaque = true
+//            isOpaque = true
         case .profileChat:
             let image = UIImage(systemName: "phone.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+            setImage(image, for: .normal)
+//            isOpaque = true
+        case .personal:
+            let image = UIImage(systemName: "hexagon.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
             setImage(image, for: .normal)
 //            backgroundColor = AppColors.backgroundGray
 //            heightAnchor.constraint(equalToConstant: 40).isActive = true
 //            widthAnchor.constraint(equalToConstant: 40).isActive = true
 //            layer.cornerRadius = 40 / 2
 //            layer.masksToBounds = true
-            isOpaque = true
-        case .personal:
-            let image = UIImage(systemName: "hexagon.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
-            setImage(image, for: .normal)
-            backgroundColor = AppColors.backgroundGray
-            heightAnchor.constraint(equalToConstant: 40).isActive = true
-            widthAnchor.constraint(equalToConstant: 40).isActive = true
-            layer.cornerRadius = 40 / 2
-            layer.masksToBounds = true
-            isOpaque = true
+//            isOpaque = true
         case .errorRetry:
             var config = UIButton.Configuration.filled()
             config.attributedTitle = AttributedString("Повторить", attributes: AttributeContainer([
