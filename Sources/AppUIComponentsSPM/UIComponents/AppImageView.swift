@@ -54,12 +54,12 @@ private extension AppImageView {
 //            contentMode = .scaleAspectFit
 
             let config = UIImage.SymbolConfiguration(scale: .medium)
-                self.image = UIImage(systemName: "chevron.down", withConfiguration: config)?
-                    .withTintColor(.white, renderingMode: .alwaysOriginal)
-                    .withBaselineOffset(fromBottom: 0)
-                self.contentMode = .scaleAspectFit
-                self.isOpaque = true // Добавляем это
-                self.backgroundColor = .clear // И это
+            self.image = UIImage(systemName: "chevron.down", withConfiguration: config)?
+                .withTintColor(.white, renderingMode: .alwaysOriginal)
+                .withBaselineOffset(fromBottom: 0)
+            self.contentMode = .scaleAspectFit
+            self.isOpaque = true // Добавляем это
+            self.backgroundColor = backgroundColor // И это
 
         case .hit:
             self.image = UIImage(named: "hit2")
