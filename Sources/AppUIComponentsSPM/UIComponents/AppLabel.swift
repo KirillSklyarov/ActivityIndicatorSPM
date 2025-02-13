@@ -71,7 +71,7 @@ private extension AppLabel {
             font = AppFonts.bold(size: 22).font
             textAlignment = alignment
             self.numberOfLines = numberOfLines
-            backgroundColor = AppColors.backgroundGray
+//            backgroundColor = AppColors.backgroundGray
             isOpaque = true
         case .header:
             self.text = text
