@@ -13,9 +13,9 @@ public enum LabelType {
 
 public final class AppLabel: InsetLabel {
 
-    public init(type: LabelType, text: String? = nil, textColor: UIColor? = .white, alignment: NSTextAlignment = .left, numberOfLines: Int = 0) {
+    public init(type: LabelType, text: String? = nil, textColor: UIColor? = .white, alignment: NSTextAlignment = .left, numberOfLines: Int = 0, backgroundColor: UIColor? = AppColors.backgroundGray) {
         super.init(frame: .zero)
-        configureLabel(type: type, text: text, textColor: textColor, alignment: alignment, numberOfLines: numberOfLines)
+        configureLabel(type: type, text: text, textColor: textColor, alignment: alignment, numberOfLines: numberOfLines, backgroundColor: backgroundColor)
     }
 
     required init?(coder: NSCoder) {
@@ -24,7 +24,7 @@ public final class AppLabel: InsetLabel {
 }
 
 private extension AppLabel {
-    func configureLabel(type: LabelType, text: String?, textColor: UIColor?, alignment: NSTextAlignment, numberOfLines: Int, backgroundColor: UIColor? = AppColors.backgroundGray) {
+    func configureLabel(type: LabelType, text: String?, textColor: UIColor?, alignment: NSTextAlignment, numberOfLines: Int, backgroundColor: UIColor?) {
         switch type {
         case .priceGrayRoundLabel:
             self.text = text
