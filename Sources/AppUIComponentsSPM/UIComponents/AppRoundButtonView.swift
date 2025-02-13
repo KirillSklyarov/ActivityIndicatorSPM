@@ -1,6 +1,6 @@
 import UIKit
 
-public enum DismissButtonType {
+public enum RoundButtonType {
     case standard
     case chevron
     case storiesWhite
@@ -8,7 +8,7 @@ public enum DismissButtonType {
     case personal
 }
 
-public final class AppDismissButtonView: UIView {
+public final class AppRoundButtonView: UIView {
 
     // MARK: - UI Properties
     private lazy var dismissButton = AppButtons(type: .grayXmark)
@@ -17,7 +17,7 @@ public final class AppDismissButtonView: UIView {
     private let viewSize: CGFloat = 40
     public var onButtonTapped: (() -> Void)?
 
-    public init(type: DismissButtonType) {
+    public init(type: RoundButtonType) {
         super.init(frame: .zero)
         configure(type)
         setupUI()
@@ -30,8 +30,8 @@ public final class AppDismissButtonView: UIView {
 }
 
 // MARK: - Configure
-private extension AppDismissButtonView {
-    func configure(_ type: DismissButtonType) {
+private extension AppRoundButtonView {
+    func configure(_ type: RoundButtonType) {
         switch type {
         case .standard:
             setColors(xColor: .white, backgroundColor: AppColors.backgroundGray)
@@ -49,7 +49,7 @@ private extension AppDismissButtonView {
 }
 
 // MARK: - Setup UI
-private extension AppDismissButtonView {
+private extension AppRoundButtonView {
     func setupUI() {
         heightAnchor.constraint(equalToConstant: viewSize).isActive = true
         widthAnchor.constraint(equalToConstant: viewSize).isActive = true
@@ -69,7 +69,7 @@ private extension AppDismissButtonView {
 }
 
 // MARK: - Setup actions
-private extension AppDismissButtonView {
+private extension AppRoundButtonView {
     func setupAction() {
         setupDismissButtonAction()
     }
@@ -82,12 +82,8 @@ private extension AppDismissButtonView {
 }
 
 // MARK: - Supporting methods
-private extension AppDismissButtonView {
+private extension AppRoundButtonView {
     func setColors(xColor: UIColor, backgroundColor: UIColor) {
-//        let image = UIImage(systemName: "xmark")?.withTintColor(xColor, renderingMode: .alwaysOriginal)
-//        dismissButton.setImage(image, for: .normal)
-//        dismissButton.isOpaque = true
-//        self.backgroundColor = backgroundColor
         dismissButton.backgroundColor = backgroundColor
         dismissButton.layer.masksToBounds = true
         dismissButton.layer.allowsGroupOpacity = true
