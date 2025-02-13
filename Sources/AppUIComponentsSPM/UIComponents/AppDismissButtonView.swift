@@ -87,8 +87,10 @@ private extension AppDismissButtonView {
 //        let image = UIImage(systemName: "xmark")?.withTintColor(xColor, renderingMode: .alwaysOriginal)
 //        dismissButton.setImage(image, for: .normal)
 //        dismissButton.isOpaque = true
-        self.backgroundColor = backgroundColor
+//        self.backgroundColor = backgroundColor
         dismissButton.backgroundColor = backgroundColor
+        dismissButton.layer.masksToBounds = true
+        dismissButton.layer.allowsGroupOpacity = true
     }
 
     func setChevron() {
